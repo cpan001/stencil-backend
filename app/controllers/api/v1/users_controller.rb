@@ -4,13 +4,16 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(name: params[:name], email: params[:email], password: params[:password], avatar: params[:avatar])
 
     if @user.save
-      render json: @user
+      render json: {id: @user.id}
     else
       render json: {erros: @user.errors.full_messages}
     end
   end
 
-
+  def index
+    @users = User.all
+    render json: @users
+  end
 
 
 

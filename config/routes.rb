@@ -3,10 +3,17 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post "/signup", to: "users#create"
-      resources :designs, only: [:index]
+      post "/signin", to: "sessions#create"
+      resources :designs, only: [:index] do
+        resources :comments, only: [:index]
+      end
       resources :projects, only: [:index]
-      resources :users do
-        resources :designs, only: [:create, :update]
+      resources :comments, only: [:update]
+      resources :users, only: [:index, :show] do
+        resources :designs, only: [:create, :update] do
+          resources :comments, only: [:create, :show]
+          resources :likes, only: [:create, :destroy]
+        end
         resources :projects, only: [:create, :update]
       end
     end

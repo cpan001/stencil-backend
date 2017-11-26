@@ -46,13 +46,13 @@ Connection.create(design_id: 1, relateddesign_id: 3)
 Connection.create(design_id: 2, relateddesign_id: 3)
 
 #Images
-Image.create(filename: "imagefilename", design_id: 1)
-Image.create(filename: "imagefilename2", design_id: 1)
-Image.create(filename: "imagefilename3", design_id: 1)
-Image.create(filename: "imagefilename4", design_id: 2)
-Image.create(filename: "imagefilename5", design_id: 2)
-Image.create(filename: "imagefilename6", design_id: 3)
-Image.create(filename: "imagefilename7", design_id: 3)
+Image.create(filename: "http://www.beautifulinterfaces.com/ew/data/items_th/375.jpg", design_id: 1)
+Image.create(filename: "https://cdn-images-1.medium.com/max/1600/0*xYj12kzwmDvbji6Q.png", design_id: 1)
+Image.create(filename: "http://gdj.graphicdesignjunction.com/wp-content/uploads/2013/02/ui+concepts+34.jpg", design_id: 1)
+Image.create(filename: "https://cdn-images-1.medium.com/max/1600/0*xYj12kzwmDvbji6Q.png", design_id: 2)
+Image.create(filename: "http://gdj.graphicdesignjunction.com/wp-content/uploads/2013/02/ui+concepts+34.jpg", design_id: 2)
+Image.create(filename: "https://cdn-images-1.medium.com/max/1600/0*xYj12kzwmDvbji6Q.png", design_id: 3)
+Image.create(filename: "http://gdj.graphicdesignjunction.com/wp-content/uploads/2013/02/ui+concepts+34.jpg", design_id: 3)
 
 #Comments
 Comment.create(content: "awesome", user_id: 1, design_id: 2)
