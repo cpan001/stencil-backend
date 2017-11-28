@@ -23,6 +23,14 @@ class Api::V1::DesignsController < ApplicationController
     end
   end
 
+  def show
+    @design = Design.find(params[:id])
+    if @design
+      render json: @design, serializer: OneDesignSerializer, root: false 
+    else
+      render json: {errors: @design.errors.full_messages}
+    end
+  end
   def update
 
   end

@@ -5,4 +5,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :followeds, serializer: UserFollowedSerializer
   has_many :designs, serializer: UserDesignSerializer
   has_many :projects
+  has_many :likes
 end
