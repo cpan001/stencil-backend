@@ -6,6 +6,6 @@ class OneDesignSerializer < ActiveModel::Serializer
   has_many :images
   has_many :comments, serializer: DesignCommentSerializer
   belongs_to :creator
-  # has_many :projects
+  has_many :projects
   has_many :likes
 end

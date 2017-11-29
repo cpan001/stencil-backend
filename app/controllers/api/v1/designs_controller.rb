@@ -14,7 +14,10 @@ class Api::V1::DesignsController < ApplicationController
     @designtags = @tags.map {|tag| DesignTag.create(design_id: @design.id, tag_id: tag.id)}
     # images
     @images = params[:images].map {|i| Image.create(filename: i, design_id: @design.id)}
-    
+    # project
+    @project = Project.find_or_create_by(title: params[:project], creator_id: params[:user_id])
+    @project_design = ProjectDesign.create(project_id: @project.id, design_id: @design.id)
+
 
     if @design.save
       render json: @design
