@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :designs, only: [:index, :show, :update] do
         resources :comments, only: [:index]
       end
-      resources :projects, only: [:index]
+      resources :projects, only: [:show]
       resources :comments, only: [:update]
       resources :users, only: [:index, :show] do
 
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         end
         resources :projects, only: [:create, :update, :index]
         resources :relationships, only: [:create, :destroy]
+        resources :project_designs, only: [:create]
       end
     end
   end

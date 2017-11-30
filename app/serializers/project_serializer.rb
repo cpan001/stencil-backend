@@ -3,5 +3,5 @@ class ProjectSerializer < ActiveModel::Serializer
 
   belongs_to :creator
   has_many :jointusers
-  has_many :designs
+  has_many :designs, serializer: UserDesignSerializer
 end
