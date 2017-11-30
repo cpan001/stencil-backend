@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       resources :designs, only: [:index, :show, :update] do
         resources :comments, only: [:index]
       end
-      resources :projects, only: [:show]
+      resources :projects, only: [:show] do
+        resources :collaborations, only: [:create, :destroy]
+      end
       resources :comments, only: [:update]
       resources :users, only: [:index, :show] do
 
