@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#jwt
+gem 'jwt'
 #active model serializers
 gem "active_model_serializers"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
