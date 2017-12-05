@@ -5,6 +5,7 @@ class Api::V1::DesignsController < ApplicationController
       user_id = JWT.decode(params[:jwt], "flatiron", true, {algorithm: "HS256"})[0]["user_id"]
 
       @design = Design.create(title: params[:title], url: params[:url], creator_id: user_id, code: params[:url])
+      @like = Like.create(design_id: @design.id, liker_id: user_id)
       @image = Image.create(filename: params[:image][:filename], design_id: @design.id)
       if @design.save && @image.save
         render json: {success: "design added"}
