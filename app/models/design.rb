@@ -12,4 +12,7 @@ class Design < ApplicationRecord
   has_many :inverse_designs, through: :inverse_connections, source: :design
   has_many :likes, dependent: :destroy
   has_many :likers, through: :likes
+
+  validates :title, :url, presence: true
+
 end

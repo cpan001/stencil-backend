@@ -13,4 +13,7 @@ class User < ApplicationRecord
 
   has_many :likes, foreign_key: "liker_id"
   has_many :likeddesigns, through: :likes, source: :design
+
+  validates :name, :email, :password, :avatar, presence: true
+  validates :email, uniqueness: true
 end

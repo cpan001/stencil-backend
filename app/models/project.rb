@@ -7,4 +7,6 @@ class Project < ApplicationRecord
 
   has_many :collaborations
   has_many :jointusers, through: :collaborations, source: :collaborator
+
+  validates :title, :creator_id, presence: true
 end
