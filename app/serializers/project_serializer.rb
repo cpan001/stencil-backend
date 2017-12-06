@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :creator_id
+  attributes :id, :title, :description, :creator_id, :updated_at
 
   belongs_to :creator
   has_many :jointusers

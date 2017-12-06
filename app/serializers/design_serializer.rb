@@ -4,8 +4,8 @@ class DesignSerializer < ActiveModel::Serializer
 
   has_many :tags
   has_many :images
-  # has_many :comments, serializer: DesignCommentSerializer
+  has_many :comments, serializer: DesignCommentSerializer
   belongs_to :creator
   # has_many :projects
-  # has_many :likes
+  has_many :likes, serializer: LikeDesignSerializer
 end

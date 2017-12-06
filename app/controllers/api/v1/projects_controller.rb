@@ -3,10 +3,8 @@ class Api::V1::ProjectsController < ApplicationController
   def index
     @own_projects = Project.where(creator_id: params[:user_id])
     @user = User.find_by(id: params[:user_id])
-    # byebug
     @jointprojects = @user.jointprojects
     @projects = @own_projects + @jointprojects
-
     render json: @projects
   end
 
