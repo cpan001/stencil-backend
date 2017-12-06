@@ -7,5 +7,5 @@ class DesignSerializer < ActiveModel::Serializer
   has_many :comments, serializer: DesignCommentSerializer
   belongs_to :creator
   # has_many :projects
-  has_many :likes, serializer: LikeDesignSerializer
+  has_many :likes
 end

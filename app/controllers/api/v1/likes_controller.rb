@@ -2,6 +2,7 @@ class Api::V1::LikesController < ApplicationController
 
   def create
     @like = Like.new(liker_id: params[:user_id], design_id: params[:design_id])
+    # byebug
     if @like.save
       render json: @like
     else
